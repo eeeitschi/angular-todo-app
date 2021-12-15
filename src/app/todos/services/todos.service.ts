@@ -12,8 +12,8 @@ export class TodosService {
         addTodo(text: string): void {
                 const newTodo: TodoInterface = {
                         id: Math.random().toString(16),
-                        text: "",
-                        isCompleted: false
+                        text,
+                        isCompleted: false,
                 };
                 const updatedTodos = [...this.todos$.getValue(), newTodo]
                 this.todos$.next(updatedTodos);
