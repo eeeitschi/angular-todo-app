@@ -10,6 +10,12 @@
                 <button class="destroy" (click)="removeTodo()"></button>
         </div>
         <ng-container *ngIf="isEditingProps">
-                <input class="edit"/>
+                <input
+                        class="edit"
+                        #textInput 
+                        [value]="editingText"
+                        (keyup)="changeText($event)"
+                        (keyup.enter)="changeTodo()"
+                />
         </ng-container>
 </li>
